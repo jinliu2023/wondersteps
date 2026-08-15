@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: wonder-steps-generator
+  mongodb:
+    uri: mongodb+srv://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@contentgenerator.uovnyyw.mongodb.net/wondersteps?retryWrites=true&w=majority
+  data:
+    mongodb:
+      auto-index-creation: false
+  thymeleaf:
+    cache: false
+
+
+wonder-steps-generator:
+  mongodb:
+    create-collections: false
+    verify-connection: true
+  static-site:
+    enabled: true
+    output-dir: build/static-site
+    trip-id: spain-2026
+    lang: en
+    base-url:
