@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="MyWonderSteps is a personal record of places visited, small moments, and tastes remembered." />
+  <title>MyWonderSteps — Places, tastes, memories</title>
+  <style>
+    :root{--ink:#3c3935;--soft:#777168;--paper:#eee6da;--sand:#ddd0bf;--terracotta:#b96f55;--leaf:#70856f;--line:#cdbba8;--max:1040px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:linear-gradient(135deg,#ece2d3 0%,#e2d3c1 46%,#d8c5b1 100%);position:relative;overflow-x:hidden;font-family:ui-rounded,"SF Pro Rounded",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+    a{color:inherit;text-decoration:none}
+body::before,body::after{content:"";position:fixed;pointer-events:none;z-index:0;filter:blur(1px);opacity:.48;transform-origin:center}
+body::before{width:88vw;height:34vh;left:-18vw;top:10vh;border-radius:48% 52% 62% 38%/54% 44% 56% 46%;background:linear-gradient(105deg,transparent 8%,rgba(255,255,255,.42) 35%,rgba(178,137,112,.22) 68%,transparent 92%);transform:rotate(-7deg) skewX(-12deg);animation:windDrift 12s ease-in-out infinite alternate}
+body::after{width:72vw;height:28vh;right:-20vw;bottom:5vh;border-radius:42% 58% 35% 65%/58% 40% 60% 42%;background:linear-gradient(115deg,transparent 5%,rgba(255,248,239,.28) 42%,rgba(151,112,92,.18) 72%,transparent 96%);transform:rotate(9deg) skewX(14deg);animation:windDrift2 15s ease-in-out infinite alternate}
+header,main,footer{position:relative;z-index:1}
+@keyframes windDrift{from{transform:translate3d(-2vw,1vh,0) rotate(-8deg) skewX(-13deg) scale(1)}to{transform:translate3d(7vw,-2vh,0) rotate(-3deg) skewX(-7deg) scale(1.06)}}
+@keyframes windDrift2{from{transform:translate3d(3vw,0,0) rotate(10deg) skewX(15deg) scale(1)}to{transform:translate3d(-7vw,-2vh,0) rotate(5deg) skewX(9deg) scale(1.08)}}
+@media(prefers-reduced-motion:reduce){body::before,body::after{animation:none}}
+    header{width:min(var(--max),calc(100% - 34px));margin:auto;padding:26px 0 18px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:750;letter-spacing:-.025em}.brand small{display:block;color:var(--soft);font-weight:500;font-size:12px;letter-spacing:.04em}
+    .footmark{width:34px;height:34px;border-radius:50% 45% 55% 45%;background:var(--terracotta);transform:rotate(-18deg);position:relative;box-shadow:8px -11px 0 -10px var(--terracotta),14px -7px 0 -11px var(--terracotta)}
+    nav{display:flex;gap:18px;color:var(--soft);font-size:14px}
+    main{width:min(var(--max),calc(100% - 34px));margin:auto}
+    .hero{padding:68px 0 46px;max-width:760px}
+    .eyebrow{font-size:13px;color:var(--leaf);letter-spacing:.1em;text-transform:uppercase;font-weight:800}
+    h1{font-family:"Iowan Old Style",Georgia,serif;font-weight:500;font-size:clamp(42px,6.2vw,70px);line-height:.98;letter-spacing:-.055em;margin:14px 0 22px}
+    .hero p{font-family:"Iowan Old Style",Georgia,serif;font-size:clamp(21px,2.5vw,28px);color:var(--soft);max-width:680px;margin:0}
+    .trail{display:flex;gap:18px;padding:12px 0 54px;color:var(--terracotta);opacity:.72}.trail span{width:9px;height:15px;border-radius:60% 45% 60% 45%;background:currentColor;transform:rotate(-22deg)}.trail span:nth-child(even){transform:rotate(22deg) translateY(9px)}
+    .steps{display:grid;gap:34px;padding-bottom:90px}
+    .step-card{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);background:rgba(255,250,244,.78);backdrop-filter:blur(8px);border:1px solid rgba(120,91,70,.15);border-radius:30px;overflow:hidden;box-shadow:0 20px 60px rgba(73,61,49,.09);transition:transform .25s ease,box-shadow .25s ease}
+    .step-card:hover{transform:translateY(-3px);box-shadow:0 26px 70px rgba(73,61,49,.13)}
+    .step-card:nth-child(even){grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr)}.step-card:nth-child(even) .card-image{order:2}
+    .card-image{min-height:420px;background:var(--sand)}.card-image img{display:block;width:100%;height:100%;object-fit:cover}.restaurant img{object-position:center 42%}.sagrada img{object-position:center 48%}
+    .card-copy{padding:46px;display:flex;flex-direction:column;justify-content:center}
+    .meta{font-size:13px;color:var(--leaf);letter-spacing:.08em;text-transform:uppercase;font-weight:800;margin-bottom:14px}
+    h2{font-family:"Iowan Old Style",Georgia,serif;font-size:clamp(34px,4.6vw,55px);line-height:1.06;font-weight:500;letter-spacing:-.035em;margin:0 0 20px}
+    .card-copy p{font-family:"Iowan Old Style",Georgia,serif;font-size:20px;line-height:1.7;color:#514c46;margin:0 0 28px}
+    .read{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;color:var(--terracotta);font-weight:750}.read::after{content:"→";transition:transform .2s ease}.step-card:hover .read::after{transform:translateX(5px)}
+    footer{border-top:1px solid var(--line);padding:32px 17px 45px;text-align:center;color:var(--soft);font-size:13px}
+    @media(max-width:760px){nav{display:none}.hero{padding-top:42px}.step-card,.step-card:nth-child(even){grid-template-columns:1fr}.step-card:nth-child(even) .card-image{order:0}.card-image{min-height:360px}.card-copy{padding:30px 27px 36px}}
+  </style>
+</head>
+<body>
+<header>
+  <a class="brand" href="index.html"><span class="footmark" aria-hidden="true"></span><span>MyWonderSteps<small>漫步记 · places, tastes, memories</small></span></a>
+  <nav><a href="#steps">Steps</a><a href="#">Places</a><a href="#">About</a></nav>
+</header>
+<main>
+  <section class="hero">
+    <div class="eyebrow">A personal trail</div>
+    <h1>Places pass by.<br>Some steps stay.</h1>
+    <p>A quiet record of where I went, what caught my attention, and the small moments I did not want to lose.</p>
+  </section>
+  <div class="trail" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+  <section class="steps" id="steps">
+    <a class="step-card" href="sagrada-familia.html">
+      <div class="card-image sagrada"><img src="assets/sagrada-familia.jpg" alt="Sagrada Família under construction beneath a clear blue sky"></div>
+      <div class="card-copy">
+        <div class="meta">Barcelona · Seen from outside</div>
+        <h2>Looking up at the Sagrada Família</h2>
+        <p>The tickets had sold out days earlier, so we could only walk around the outside. Even from the street, Gaudí’s unfinished basilica felt difficult to take in all at once.</p>
+        <span class="read">Follow this step</span>
+      </div>
+    </a>
+
+
+    <a class="step-card" href="restaurant.html">
+      <div class="card-image restaurant"><img src="assets/restaurant.jpg" alt="Rustic entrance of La Cova Fumada in Barcelona"></div>
+      <div class="card-copy">
+        <div class="meta">Barcelona · A taste remembered</div>
+        <h2>A doorway, a noisy neighborhood, and one memorable bite</h2>
+        <p>We almost walked past the old wooden doors. Inside, a lively local room and a small potato dish called La Ramala became one of the memories I carried away.</p>
+        <span class="read">Follow this step</span>
+      </div>
+    </a>
+  </section>
+</main>
+<footer>MyWonderSteps · A personal record of where I went and what I tasted.</footer>
+</body>
+</html>

@@ -5,7 +5,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest(properties = {
 		"spring.mongodb.uri=mongodb://localhost:27017/wondersteps",
-		"wonder-steps-generator.mongodb.verify-connection=false"
+		"wonder-steps-generator.mongodb.verify-connection=false",
+		"wonder-steps-generator.static-site.enabled=false"
 })
 class WonderStepsGeneratorApplicationTests {
 

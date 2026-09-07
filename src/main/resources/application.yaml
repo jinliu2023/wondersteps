@@ -2,7 +2,8 @@ spring:
   application:
     name: wonder-steps-generator
   mongodb:
-    uri: mongodb+srv://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@contentgenerator.uovnyyw.mongodb.net/wondersteps?retryWrites=true&w=majority
+#    uri: mongodb+srv://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@contentgenerator.uovnyyw.mongodb.net/wondersteps?retryWrites=true&w=majority
+    uri: mongodb+srv://bistropediacom_db_user:KomNrNOMiTLYS3Bo@contentgenerator.uovnyyw.mongodb.net/wondersteps?retryWrites=true&w=majority
   data:
     mongodb:
       auto-index-creation: false
@@ -12,11 +13,13 @@ spring:
 
 wonder-steps-generator:
   mongodb:
+    collection: wondersteps
     create-collections: false
     verify-connection: true
   static-site:
     enabled: true
     output-dir: build/static-site
-    trip-id: spain-2026
+    trip-status: PUBLISHED
+    featured-only: true
     lang: en
     base-url:
