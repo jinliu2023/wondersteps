@@ -35,7 +35,7 @@ public class MyWonderStepsHtmlRenderer {
 				<body>
 				<header>
 				  <a class="brand" href="index.html"><span class="footmark" aria-hidden="true"></span><span>MyWonderSteps<small>漫步记 · places, tastes, memories</small></span></a>
-				  <nav><a href="#steps">Steps</a><a href="#">Places</a><a href="#">About</a></nav>
+				  <nav><a href="#steps">Steps</a></nav>
 				</header>
 				<main>
 				  <section class="hero">
@@ -90,7 +90,7 @@ public class MyWonderStepsHtmlRenderer {
 				  <style>%s</style>
 				</head>
 				<body>
-				<header><a class="brand" href="index.html"><span class="footmark" aria-hidden="true"></span><span>MyWonderSteps<small>漫步记 · places, tastes, memories</small></span></a><nav><a href="index.html#steps">Steps</a><a href="#">Places</a><a href="#">About</a></nav></header>
+				<header><a class="brand" href="index.html"><span class="footmark" aria-hidden="true"></span><span>MyWonderSteps<small>漫步记 · places, tastes, memories</small></span></a><nav><a href="index.html#steps">Steps</a></nav></header>
 				<main class="page"><a class="back" href="index.html">&larr; Back to my steps</a><section class="intro"><div class="crumb">%s</div><h1>%s</h1><p class="subtitle">%s</p><figure class="photo-wrap">%s<figcaption class="caption">%s</figcaption></figure></section><div class="trail" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div><article><div class="memory-meta">%s</div>%s%s<div class="closing">%s</div></article></main>
 				<footer>MyWonderSteps · A personal record of where I went and what I tasted.</footer>
 				</body>
